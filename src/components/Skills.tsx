@@ -4,13 +4,9 @@ import { useState, useEffect } from "react";
 const Skills = () => {
   const [inView, setInView] = useState(false);
 
-  const skills = [
-    { name: "React", level: 95, color: "from-blue-400 to-blue-600" },
-    { name: "TypeScript", level: 90, color: "from-blue-500 to-blue-700" },
-    { name: "Node.js", level: 85, color: "from-green-400 to-green-600" },
-    { name: "Python", level: 80, color: "from-yellow-400 to-yellow-600" },
-    { name: "PostgreSQL", level: 85, color: "from-indigo-400 to-indigo-600" },
-    { name: "AWS", level: 75, color: "from-orange-400 to-orange-600" },
+  const technologies = [
+    "React", "TypeScript", "Node.js", "Python", "PostgreSQL", "AWS", 
+    "Docker", "Git", "Figma", "JavaScript", "MongoDB", "Express.js"
   ];
 
   useEffect(() => {
@@ -47,30 +43,18 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {skills.map((skill, index) => (
-            <div key={skill.name} className="space-y-2">
-              <div className="flex justify-between items-center">
-                <span className="text-white font-semibold text-lg">{skill.name}</span>
-                <span className="text-gray-300">{skill.level}%</span>
-              </div>
-              <div className="w-full bg-slate-700 rounded-full h-3">
-                <div
-                  className={`h-3 rounded-full bg-gradient-to-r ${skill.color} transition-all duration-1000 ease-out`}
-                  style={{
-                    width: inView ? `${skill.level}%` : "0%",
-                    transitionDelay: `${index * 200}ms`,
-                  }}
-                ></div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {["React", "TypeScript", "Node.js", "PostgreSQL", "AWS", "Docker", "Git", "Figma"].map((tech) => (
-            <div key={tech} className="text-center p-4 bg-slate-800/50 rounded-lg hover:bg-slate-700/50 transition-colors duration-200">
-              <div className="text-gray-300 font-medium">{tech}</div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {technologies.map((tech, index) => (
+            <div 
+              key={tech} 
+              className={`text-center p-6 bg-slate-800/50 rounded-lg hover:bg-slate-700/50 transition-all duration-300 hover:scale-105 ${
+                inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+              style={{
+                transitionDelay: inView ? `${index * 100}ms` : '0ms',
+              }}
+            >
+              <div className="text-gray-300 font-medium text-lg">{tech}</div>
             </div>
           ))}
         </div>
