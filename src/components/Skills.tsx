@@ -9,22 +9,22 @@ const Skills = () => {
     {
       title: "Languages & Frameworks",
       icon: Code,
-      technologies: ["React", "TypeScript", "JavaScript", "Node.js", "Express.js", "Python"]
+      technologies: ["JavaScript", "Python", "MERN Stack", "FastAPI", "Streamlit"]
     },
     {
-      title: "AI/LLMs",
+      title: "AI/ML & LLMs",
       icon: Brain,
-      technologies: ["OpenAI GPT", "Claude", "LangChain", "TensorFlow", "PyTorch", "Hugging Face"]
+      technologies: ["Langchain", "Langflow", "LLM Models (Llama, Mistral AI, Gemini)", "Groq", "Hugging Face", "RAG (Retrieval-Augmented Generation)"]
     },
     {
       title: "Databases",
       icon: Database,
-      technologies: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Firebase", "Supabase"]
+      technologies: ["MySQL", "MongoDB", "ChromaDB", "AstraDB"]
     },
     {
       title: "DevOps",
       icon: Settings,
-      technologies: ["AWS", "Docker", "Git", "GitHub Actions", "Vercel", "Nginx"]
+      technologies: ["AWS", "Docker", "Kubernetes", "Jenkins", "GitLab CI/CD", "Prometheus & Grafana"]
     }
   ];
 
@@ -80,7 +80,7 @@ const Skills = () => {
                   <h3 className="text-2xl font-bold text-white">{category.title}</h3>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4">
                   {category.technologies.map((tech, techIndex) => (
                     <div 
                       key={tech}
