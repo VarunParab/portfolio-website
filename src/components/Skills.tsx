@@ -1,12 +1,31 @@
 
 import { useState, useEffect } from "react";
+import { Code, Brain, Database, Settings } from "lucide-react";
 
 const Skills = () => {
   const [inView, setInView] = useState(false);
 
-  const technologies = [
-    "React", "TypeScript", "Node.js", "Python", "PostgreSQL", "AWS", 
-    "Docker", "Git", "Figma", "JavaScript", "MongoDB", "Express.js"
+  const skillCategories = [
+    {
+      title: "Languages & Frameworks",
+      icon: Code,
+      technologies: ["React", "TypeScript", "JavaScript", "Node.js", "Express.js", "Python"]
+    },
+    {
+      title: "AI/LLMs",
+      icon: Brain,
+      technologies: ["OpenAI GPT", "Claude", "LangChain", "TensorFlow", "PyTorch", "Hugging Face"]
+    },
+    {
+      title: "Databases",
+      icon: Database,
+      technologies: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Firebase", "Supabase"]
+    },
+    {
+      title: "DevOps",
+      icon: Settings,
+      technologies: ["AWS", "Docker", "Git", "GitHub Actions", "Vercel", "Nginx"]
+    }
   ];
 
   useEffect(() => {
@@ -43,20 +62,42 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {technologies.map((tech, index) => (
-            <div 
-              key={tech} 
-              className={`text-center p-6 bg-slate-800/50 rounded-lg hover:bg-slate-700/50 transition-all duration-300 hover:scale-105 ${
-                inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
-              style={{
-                transitionDelay: inView ? `${index * 100}ms` : '0ms',
-              }}
-            >
-              <div className="text-gray-300 font-medium text-lg">{tech}</div>
-            </div>
-          ))}
+        <div className="grid md:grid-cols-2 gap-12">
+          {skillCategories.map((category, categoryIndex) => {
+            const IconComponent = category.icon;
+            return (
+              <div 
+                key={category.title}
+                className={`transition-all duration-700 ${
+                  inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{
+                  transitionDelay: inView ? `${categoryIndex * 200}ms` : '0ms',
+                }}
+              >
+                <div className="mb-6 flex items-center space-x-3">
+                  <IconComponent className="text-blue-400" size={32} />
+                  <h3 className="text-2xl font-bold text-white">{category.title}</h3>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  {category.technologies.map((tech, techIndex) => (
+                    <div 
+                      key={tech}
+                      className={`text-center p-4 bg-slate-800/50 rounded-lg hover:bg-slate-700/50 transition-all duration-300 hover:scale-105 ${
+                        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                      }`}
+                      style={{
+                        transitionDelay: inView ? `${(categoryIndex * 200) + (techIndex * 100)}ms` : '0ms',
+                      }}
+                    >
+                      <div className="text-gray-300 font-medium">{tech}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
