@@ -28,17 +28,17 @@ const About = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
               <div className="text-center p-6 bg-slate-700/50 rounded-lg">
-                <Code className="mx-auto mb-4 text-purple-400" size={48} />
+                <Code className="mx-auto mb-4 text-blue-400" size={48} />
                 <h3 className="text-xl font-semibold text-white mb-2">Clean Code</h3>
                 <p className="text-gray-300 text-sm">Writing maintainable, scalable code</p>
               </div>
               <div className="text-center p-6 bg-slate-700/50 rounded-lg">
-                <Palette className="mx-auto mb-4 text-pink-400" size={48} />
+                <Palette className="mx-auto mb-4 text-teal-400" size={48} />
                 <h3 className="text-xl font-semibold text-white mb-2">UI/UX Design</h3>
                 <p className="text-gray-300 text-sm">Creating beautiful user interfaces</p>
               </div>
               <div className="text-center p-6 bg-slate-700/50 rounded-lg">
-                <Rocket className="mx-auto mb-4 text-blue-400" size={48} />
+                <Rocket className="mx-auto mb-4 text-cyan-400" size={48} />
                 <h3 className="text-xl font-semibold text-white mb-2">Performance</h3>
                 <p className="text-gray-300 text-sm">Optimizing for speed and efficiency</p>
               </div>
@@ -46,7 +46,7 @@ const About = () => {
           </div>
 
           <div className="relative">
-            <div className="w-80 h-80 mx-auto bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+            <div className="w-80 h-80 mx-auto bg-gradient-to-br from-blue-600 to-teal-600 rounded-full flex items-center justify-center">
               <div className="w-72 h-72 bg-slate-800 rounded-full flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-6xl font-bold text-white mb-2">3+</div>

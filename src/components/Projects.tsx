@@ -46,7 +46,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="bg-slate-700/50 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20"
+              className="bg-slate-700/50 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -65,7 +65,7 @@ const Projects = () => {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-purple-600/20 text-purple-300 rounded-full text-xs"
+                      className="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-xs"
                     >
                       {tech}
                     </span>
@@ -75,7 +75,7 @@ const Projects = () => {
                 <div className="flex gap-3">
                   <Button
                     size="sm"
-                    className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white flex-1"
+                    className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white flex-1"
                     onClick={() => window.open(project.liveUrl, "_blank")}
                   >
                     <ExternalLink size={16} className="mr-2" />
